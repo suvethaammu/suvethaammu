@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+ 
+
+    <context:component-scan base-package="com.inautix" />
+ 
+    <mvc:annotation-driven />
+     
+    
+    
+ 	<!-- Initialization for data source -->
+  <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="url" value="jdbc:derby://172.24.34.87:1527/sample"/>
+      <property name="username" value="user"/>
+      <property name="password" value="pwd"/>
+   </bean>
+
+   <!-- Definition for hotelJDBCTemplate bean -->
+   <bean id="hotelDAOImpl" 
+      class="com.inautix.HotelJDBCTemplate">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
+ 
+ 
+ <bean id="metaData" class="com.inautix.MetaData" />
+	 <bean id="data" class="com.inautix.Data" />
+	 <bean id="error" class="com.inautix.ErrorDetails" />	
+	 <bean id="response" class="com.inautix.Response" />	
+ 
+</beans>
