@@ -1,0 +1,39 @@
+.button {
+    background-color:#F5F5DC; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+.button:hover {background-color: #FFFF00}
+.button {width: 250px;}
+/* unvisited link */
+a:link {
+    color: #CD5C5C;
+}
+
+/* visited link */
+a:visited {
+    color: #00FFFF;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+.sttyle
+{
+	  font-style: italic;
+	  font-weight: bold;
+}
